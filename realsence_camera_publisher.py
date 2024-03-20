@@ -26,9 +26,9 @@ class BGRD_camera_publish():
             depth_im = np.asanyarray(depth_frame.get_data())
             colour_im = np.asanyarray(colour_frame.get_data())
 
-            depth_im = cv2.applyColorMap(cv2.convertScaleAbs(depth_im, alpha=0.5), cv2.COLORMAP_JET)
+            depth_colourMap = cv2.applyColorMap(cv2.convertScaleAbs(depth_im, alpha=0.5), cv2.COLORMAP_JET)
             
-            return colour_im, depth_im
+            return colour_im, depth_im, depth_colourMap
     
     def stop(self):
         self.pipe.stop()
