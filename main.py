@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 
 cap = BGRD_camera_publish()
-model = YOLO('best.pt')
+model = YOLO('last.pt')
 
 bz = 5
 
@@ -34,17 +34,18 @@ while True:
                                depth_frame[int((xyxy[0]+xyxy[2])/2)-bz, int((xyxy[1]+xyxy[3])/2)-bz]]
             count = 0
             sum = 0
+            print(distance_matrix)
             for i in distance_matrix:
                 if i != 0:
                     sum = sum + i
                     count = count+1
             if sum != 0:
-                distance = sum/count
+                distance = int(sum/count)
             cv2.circle(frame_, (int((xyxy[0]+xyxy[2])/2)-bz, int((xyxy[1]+xyxy[3])/2)-bz), 1, (0,0,255), 2)
             cv2.putText(frame_, f"Distance: {distance}", (int((xyxy[0]+xyxy[2])/2), int((xyxy[1]+xyxy[3])/2)),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0,0), 2)
     except:
-        print("Apple not found")
+        print("tennis ball not found")
 
     #visualise
     cv2.imshow('frame', frame_)
@@ -52,5 +53,4 @@ while True:
 
     key = cv2.waitKey(1)
     if key == 27:
-        cap.stop()
         break
