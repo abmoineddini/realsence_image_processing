@@ -1,7 +1,7 @@
 
 path: /home/xihelm/Documents/realsence_image_processing/data  # dataset root dir
-train: train/imgs # train images (relative to 'path')
-val: validation/imgs  # val images (relative to 'path')
+train: images/train # train images (relative to 'path')
+val: images/validation  # val images (relative to 'path')
 
 # Classes
 names:
