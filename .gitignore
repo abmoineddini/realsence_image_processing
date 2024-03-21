@@ -2,3 +2,5 @@ venv/
 test.py
 yolov8n.pt
 __pycache__/
+data/
+data_all/
