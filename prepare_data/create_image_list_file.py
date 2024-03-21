@@ -1,5 +1,5 @@
+# Credits to https://github.com/computervisioneng
 import os
-
 
 alpaca_id = '/m/0pcr'
 

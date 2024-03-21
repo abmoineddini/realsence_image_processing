@@ -1,3 +1,8 @@
+# Author: Amirbahador Moinedini
+# Email : abmoineddini@gmail.com
+# Project : Tennis ball tracker
+# version : 1
+
 from realsence_camera_publisher import BGRD_camera_publish
 from ultralytics import YOLO
 import cv2
