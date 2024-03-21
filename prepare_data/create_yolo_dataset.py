@@ -18,7 +18,7 @@ for set_ in ['images', 'labels']:
         os.mkdir(dir_)
 
 Tennis_ball_id = '/m/05ctyq'  # alpacha: '/m/0pcr', Tennis ball: '/m/05ctyq'
-class_names =  'tennis_ball'   #'Alpacha'
+class_names =  'Alpacha'  # 'tennis_ball' 
 
 train_bboxes_filename = os.path.join('.', 'data_all/boxes/oidv6-train-annotations-bbox.csv')
 validation_bboxes_filename = os.path.join('.', 'data_all/boxes/validation-annotations-bbox.csv')
