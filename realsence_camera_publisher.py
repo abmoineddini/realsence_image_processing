@@ -35,34 +35,6 @@ class BGRD_camera_publish():
         
         return colour_im, depth_im, depth_colourMap
     
-    # def get_dep_value(self,xmax, xmin, ymin, ymax):
-    #     scale = self.height / self.expected
-    #     crop_start = round(self.expected * (self.height/self.width - 1) / 2)
-    #     xmin_depth = int((xmin * self.expected + crop_start) * scale)
-    #     ymin_depth = int((ymin * self.expected) * scale)
-    #     xmax_depth = int((xmax * self.expected + crop_start) * scale)
-    #     ymax_depth = int((ymax * self.expected) * scale)
-    #     depth = np.asanyarray(self.depth_frame.get_data())
-    #     # Crop depth data:
-    #     depth = depth[xmin_depth:xmax_depth,ymin_depth:ymax_depth].astype(float)
-
-    #     # Get data scale from the device and convert to meters
-    #     depth_scale = self.profile.get_device().first_depth_sensor().get_depth_scale()
-    #     depth = depth * depth_scale
-    #     print(depth)
-    #     print(depth_scale)
-    #     dist,_,_,_ = cv2.mean(depth)
-    #     print(dist)
-    #     return dist
-
-    def get_dep_value(self,depth):
-
-        # Get data scale from the device and convert to meters
-        depth_scale = self.profile.get_device().first_depth_sensor().get_depth_scale()
-        depth = depth * depth_scale
-        dist,_,_,_ = cv2.mean(depth)
-        return int(dist*1000)
-
 
     def stop(self):
         self.pipe.stop()
