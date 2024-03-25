@@ -2,4 +2,4 @@ from ultralytics import YOLO
 
 model = YOLO('yolov8n.pt')
 
-results = model.train(data='config.yaml', epochs=150)
+results = model.train(data='config.yaml', epochs=200)

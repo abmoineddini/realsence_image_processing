@@ -31,7 +31,7 @@ class BGRD_camera_publish():
         # colour_im = colour_im[0:480, 40:520]
 
 
-        depth_colourMap = cv2.applyColorMap(cv2.convertScaleAbs(depth_im, alpha=0.5), cv2.COLORMAP_JET)
+        depth_colourMap = cv2.applyColorMap(cv2.convertScaleAbs(depth_im, alpha=0.1), cv2.COLORMAP_JET)
         
         return colour_im, depth_im, depth_colourMap
     
